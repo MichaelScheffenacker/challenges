@@ -4,7 +4,7 @@ Challenges des GerDevTalk auf Telegram.
 
 **Jeder macht sich einen eigenen Ordner im Repo.**
 
-## Challange 1
+## Challange 1 (Sonntag, 2. August 2020)
 
 1a: Schreibe einen Shuffler der die Integers 1 bis 1M (korrekt) mischt und in einem Array ablegt.
 
