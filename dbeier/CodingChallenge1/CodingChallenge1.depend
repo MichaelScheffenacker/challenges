@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1595305463 source:/home/beij/code/CodingChallenge1/main.c
-	<stdio.h>
-	<stdlib.h>
-	<time.h>
-	<stdint.h>
-
