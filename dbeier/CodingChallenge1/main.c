@@ -23,17 +23,50 @@ int *create(int max){
     }
     return array;
 }
+
+void print_array(int *data, int max)
+{
+    for(int i = 0; i < max; i++){
+        printf("%d\n", data[i]);
+    }
+    printf("\n");
+}
+/**
+ * @brief sort
+ * @param data
+ * @param max
+ *
+ * Braucht maximal 2*n - 1 schleifendurchläufe.
+ * Worst Case Szenarion für i=0 ist das bevor
+ * data[0] == 1 n Schritte gebraucht werden.
+ * Bei jedem Schritt wird mindestens 1 Element an die richtige
+ * Stelle geschoben, wenn also n Schritte gebraucht werden, ist
+ * es schon sortiert und die Schleife läuft noch n-1 mal weiter.
+ */
+
+void sort(int *data, int max){
+    for(int i = 0;i<max;i++){
+        int current = data[i];
+        if(current == i+1)
+            continue;
+        int newpos = current - 1;
+        int buff = data[newpos];
+        data[newpos] = current;
+        data[i] = buff;
+        i--;
+    }
+}
+
 int main()
 {
     srand (time(NULL));
-    const long max = 100;
-    const long min = 0;
+    const long max = 1000000;
     printf("%s","Hello world!\n");
     int *array = create(max);
     shuffle(array, max);
-    for(int i = 0; i < max; i++){
-        printf("%d\n", array[i]);
-    }
-    array = create(max);
+    //print_array(array,max);
+    sort(array,max);
+    //print_array(array,max);
+    //array = create(max);
     return 0;
 }
